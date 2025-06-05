@@ -1,6 +1,6 @@
-SRCS = megaphone.cpp
+SRCS = main.cpp PhoneBook.cpp ContactSet.cpp ContactGet.cpp
 CC = c++ -Wall -Werror -Wextra -g3 -std=c++98
-NAME = megaphone
+NAME = PhoneBook
 OBJS_DIR = .objets/
 SRCS_DIR = srcs/
 OBJS = $(SRCS:$(SRCS_DIR)%.cpp=$(OBJS_DIR)%.o)
@@ -10,7 +10,7 @@ all : $(NAME)
 
 $(NAME): $(OBJS)
 	@$(CC) $(OBJS) -o $(NAME)
-	@echo "megaphone done !"
+	@echo "PhoneBook done !"
 
 $(OBJS_DIR)%.o : $(SRCS_DIR)%.cpp
 	@$(DIR_DUP)
