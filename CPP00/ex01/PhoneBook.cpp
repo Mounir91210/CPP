@@ -6,7 +6,7 @@
 /*   By: modavid <modavid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 20:12:57 by modavid           #+#    #+#             */
-/*   Updated: 2025/06/06 00:53:53 by modavid          ###   ########.fr       */
+/*   Updated: 2025/06/07 23:22:58 by modavid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 
 PhoneBook::PhoneBook(void)
 {
-    std::cout << "This is constructor" << std::endl;
     return;
 }
 
 PhoneBook::~PhoneBook(void) 
 {
-    std::cout << "This is destructor" << std::endl;
     return;
 }
 
@@ -46,7 +44,7 @@ void    PhoneBook::Add_Contact(int *i)
     std::string darkest_secret;
 
     if (*i == 8)
-    *i = 0;
+        *i = 0;
     std::cout << std::endl;
     std::cout << "What is your first name : ";
     std::cin >> first_name;
@@ -75,7 +73,6 @@ void    PhoneBook::Search_Contact(int *i)
     int         num_contact;
     std::string tmp;
     
-    std::cout << "i = " << *i << std::endl;
     if (*i == 0)
     {
         std::cout << std::endl << "No contact saved" << std::endl;
@@ -91,20 +88,15 @@ void    PhoneBook::Search_Contact(int *i)
     std::cout << "Please enter the contact's number" << std::endl;
     std::cin >> tmp;
     num_contact = atoi(tmp.c_str());
-    if (num_contact > 8 || num_contact < 1)
-        std::cout << std::endl << "Wrong number" << std::endl << std::endl;
+    if (num_contact < 1 || num_contact > this->count)
+        std::cout << std::endl << "Contact's number don't exit" << std::endl << std::endl;
     else
     {
-        if (num_contact > *i)
-            std::cout << std::endl << "Contact's number don't exit" << std::endl << std::endl;
-        else
-        {
-            std::cout << std::endl << "The informations of number " << num_contact << " are :" << std::endl;
-            std::cout << "First name = " << this->rep[num_contact - 1].Getfirst_Name() << std::endl;
-            std::cout << "Last name = " << this->rep[num_contact - 1].Getlast_Name() << std::endl;
-            std::cout << "Nick name = " << this->rep[num_contact - 1].Getnick_Name() << std::endl;
-            std::cout << "Phone number = " << this->rep[num_contact - 1].Getphone_Num() << std::endl;
-            std::cout << "Darkest secret = " << this->rep[num_contact - 1].Getdark_Secret() << std::endl << std::endl;
-        }
+        std::cout << std::endl << "The informations of number " << num_contact << " are :" << std::endl;
+        std::cout << "First name = " << this->rep[num_contact - 1].Getfirst_Name() << std::endl;
+        std::cout << "Last name = " << this->rep[num_contact - 1].Getlast_Name() << std::endl;
+        std::cout << "Nick name = " << this->rep[num_contact - 1].Getnick_Name() << std::endl;
+        std::cout << "Phone number = " << this->rep[num_contact - 1].Getphone_Num() << std::endl;
+        std::cout << "Darkest secret = " << this->rep[num_contact - 1].Getdark_Secret() << std::endl << std::endl;
     }
 }
