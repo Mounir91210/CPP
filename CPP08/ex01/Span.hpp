@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modavid <modavid@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mounir <mounir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/12 12:07:13 by modavid           #+#    #+#             */
-/*   Updated: 2025/09/19 09:05:12 by modavid          ###   ########.fr       */
+/*   Updated: 2025/09/22 15:35:01 by mounir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Span
     private:
     
         std::vector<int> _tab;
-        unsigned int     _count;
+        unsigned int     _size;
     
     public:
     
@@ -40,6 +40,7 @@ class Span
         ~Span(void);
 
         void    addNumber(unsigned int number);
+        void    addMultipleNumber(unsigned int number);
         void    shortestSpan();
         void    largestSpan();
 };

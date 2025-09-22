@@ -1,6 +1,6 @@
-SRCS = main.cpp
+SRCS = main.cpp Span.cpp
 CC = c++ -Wall -Werror -Wextra -Wshadow -Wno-shadow -g3 -std=c++98
-NAME = easyfind
+NAME = Span
 OBJS_DIR = .objets/
 SRCS_DIR = srcs/
 OBJS = $(SRCS:$(SRCS_DIR)%.cpp=$(OBJS_DIR)%.o)
@@ -10,7 +10,7 @@ all : $(NAME)
 
 $(NAME): $(OBJS)
 	@$(CC) $(OBJS) -o $(NAME)
-	@echo "easyfind done !"
+	@echo "Span done !"
 
 $(OBJS_DIR)%.o : $(SRCS_DIR)%.cpp
 	@$(DIR_DUP)
